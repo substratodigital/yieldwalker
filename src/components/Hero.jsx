@@ -55,10 +55,19 @@ export default function Hero() {
         </div>
 
         <h1 className="display-xl">
-          <span className="line-mask"><span>{t.hero.h1a}</span></span>
           <span className="line-mask">
             <span>
-              <span className="accent">{t.hero.h1b}</span>
+              {t.hero.h1_1a}
+              <span className="accent">{t.hero.h1_1b}</span>
+              {t.hero.h1_1c}
+            </span>
+          </span>
+          <span className="line-mask">
+            <span>{t.hero.h1_2}</span>
+          </span>
+          <span className="line-mask">
+            <span>
+              <span className="accent">{t.hero.h1_3}</span>
               <Mark className="hero-mark-glyph" />
             </span>
           </span>
