@@ -16,7 +16,7 @@ export default function Rail() {
       gsap.to(progress, {
         scaleY: 1,
         ease: 'none',
-        scrollTrigger: { trigger: document.body, start: 'top top', end: 'max', scrub: 0.6 },
+        scrollTrigger: { trigger: document.body, start: 'top top', end: 'max', scrub: 0.6, invalidateOnRefresh: true },
       })
       gsap.to(dot, {
         y: () => progress.offsetHeight - 7,
@@ -31,7 +31,6 @@ export default function Rail() {
     <div className="rail" ref={railRef} aria-hidden="true">
       <div className="rail-progress" />
       <div className="rail-dot" />
-      <span className="rail-coords">23.55°S / 46.63°W — YW.FIELD.OPS</span>
     </div>
   )
 }

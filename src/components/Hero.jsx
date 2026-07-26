@@ -1,10 +1,10 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { useLang, waLink } from '../i18n.jsx'
-import { Mark, WhatsAppIcon, ArrowDown } from './Icons.jsx'
+import { useLang } from '../i18n.jsx'
+import { ContactIcon, ArrowDown } from './Icons.jsx'
 
 export default function Hero() {
-  const { lang, t } = useLang()
+  const { t } = useLang()
   const ref = useRef(null)
 
   useLayoutEffect(() => {
@@ -51,7 +51,7 @@ export default function Hero() {
       <div className="wrap">
         <div className="hero-eyebrow-row">
           <span className="eyebrow">{t.hero.eyebrow}</span>
-          <span className="mono">FIELD GUIDE — UNITREE A2-PRO</span>
+          <span className="mono">{t.hero.tag}</span>
         </div>
 
         <h1 className="display-xl">
@@ -68,7 +68,6 @@ export default function Hero() {
           <span className="line-mask">
             <span>
               <span className="accent">{t.hero.h1_3}</span>
-              <Mark className="hero-mark-glyph" />
             </span>
           </span>
         </h1>
@@ -77,11 +76,11 @@ export default function Hero() {
           <div>
             <p className="lede">{t.hero.lede}</p>
             <div className="hero-ctas">
-              <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={waLink(lang, 'locacao')}>
-                <WhatsAppIcon />
+              <a className="btn btn-primary" href="/contato/index.html">
+                <ContactIcon />
                 {t.hero.cta1}
               </a>
-              <a className="btn btn-ghost" href="#pilotos">
+              <a className="btn btn-ghost" href="#locacao">
                 {t.hero.cta2}
               </a>
             </div>
@@ -90,7 +89,7 @@ export default function Hero() {
             <ArrowDown />
             <span>{t.hero.scroll}</span>
             <span className="tick" />
-            <span>23.55°S / 46.63°W</span>
+            <span>1.35°N / 103.82°E</span>
           </div>
         </div>
 

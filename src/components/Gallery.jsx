@@ -2,11 +2,11 @@ import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 
 const items = [
-  { src: '/img/yw-01.webp', tag: 'YW.01 — HIGHWAY SLOPE' },
-  { src: '/img/yw-02.webp', tag: 'YW.02 — FIELD CUT' },
-  { src: '/img/yw-03.webp', tag: 'YW.03 — CUTTING ARM' },
-  { src: '/img/yw-04.webp', tag: 'YW.04 — TERRAIN MODEL' },
-  { src: '/img/yw-05.webp', tag: 'YW.05 — DIGITAL TWIN' },
+  { src: '/img/yw-01.webp', tag: 'YW.01 / HIGHWAY SLOPE' },
+  { src: '/img/yw-02.webp', tag: 'YW.02 / FIELD CUT' },
+  { src: '/img/yw-03.webp', tag: 'YW.03 / CUTTING ARM' },
+  { src: '/img/yw-04.webp', tag: 'YW.04 / TERRAIN MODEL' },
+  { src: '/img/yw-05.webp', tag: 'YW.05 / DIGITAL TWIN' },
 ]
 
 /* Faixa de imagens em marquee infinito */

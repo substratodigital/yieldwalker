@@ -1,11 +1,11 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { useLang, waLink } from '../i18n.jsx'
+import { useLang } from '../i18n.jsx'
 import { useReveal } from '../useReveal.js'
-import { WhatsAppIcon } from './Icons.jsx'
+import { ContactIcon } from './Icons.jsx'
 
 export default function Assistencia() {
-  const { lang, t } = useLang()
+  const { t } = useLang()
   const ref = useRef(null)
   useReveal(ref)
 
@@ -29,26 +29,33 @@ export default function Assistencia() {
       <div className="wrap">
         <div className="section-head" data-rv>
           <span className="eyebrow">{t.assist.eyebrow}</span>
-          <h2 className="display-lg">{t.assist.h2}</h2>
+          <h2 className="display-lg">
+            {t.assist.h2a}<span className="accent">{t.assist.h2b}</span>{t.assist.h2c}<span className="accent">{t.assist.h2d}</span>{t.assist.h2e}
+          </h2>
         </div>
 
         <div className="service-grid" data-rv>
           <div className="service-media">
-            <img src="/img/yw-03.webp" alt="Detalhe do braço de corte do A2-Pro em operação" loading="lazy" />
-            <span className="mono tag">YW SERVICE — DIAG / REPAIR / CAL</span>
+            <img src="/img/yw-03.webp" alt="Detalhe do braço de corte do QPD 2DoF BCN 1 em operação" loading="lazy" />
+            <span className="mono tag">YW SAFETY / WORKER RISK</span>
           </div>
           <div className="service-body">
             <p className="lede">{t.assist.lede}</p>
-            <ul>
-              {t.assist.items.map((li) => (
-                <li key={li}>{li}</li>
-              ))}
-            </ul>
+            {t.assist.groups.map((g) => (
+              <div className="risk-group" key={g.title}>
+                <h5>{g.title}</h5>
+                <ul>
+                  {g.items.map((li) => (
+                    <li key={li}>{li}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
             <div className="service-cta">
               <span className="big">{t.assist.ctaTitle}</span>
               <p>{t.assist.ctaP}</p>
-              <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={waLink(lang, 'assistencia')}>
-                <WhatsAppIcon />
+              <a className="btn btn-primary" href="/contato/index.html">
+                <ContactIcon />
                 {t.assist.cta}
               </a>
             </div>

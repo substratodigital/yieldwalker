@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yieldwalker · Contato</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #161616;
+    --ink-2: #1c1d1f;
+    --charcoal: #35373a;
+    --bone: #d8d8d5;
+    --gray: #777767;
+    --gray-2: #8b949c;
+    --yellow: #f5b400;
+    --yellow-08: rgba(245, 180, 0, 0.08);
+    --yellow-14: rgba(245, 180, 0, 0.14);
+    --yellow-25: rgba(245, 180, 0, 0.25);
+    --line: rgba(216, 216, 213, 0.14);
+    --line-strong: rgba(216, 216, 213, 0.28);
+    --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--ink); color: var(--bone);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+  header {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px; padding: 0 clamp(16px, 3vw, 40px);
+    background: rgba(22, 22, 22, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  header a.brand { display: flex; align-items: center; text-decoration: none; }
+  header .brand img { height: 22px; width: auto; display: block; }
+  .lang-switch { display: flex; align-items: center; gap: 6px; }
+  .lang-btn {
+    width: 28px; height: 20px; border-radius: 2px; overflow: hidden;
+    border: 1px solid var(--line-strong); background: var(--ink-2);
+    cursor: pointer; padding: 0; opacity: 0.45;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+  }
+  .lang-btn:hover { opacity: 0.85; }
+  .lang-btn.active { opacity: 1; border-color: var(--yellow); }
+  .lang-btn svg { width: 100%; height: 100%; display: block; }
+  main { padding: clamp(48px, 8vh, 96px) 0 clamp(64px, 10vh, 120px); }
+  .eyebrow {
+    font-family: var(--font-mono); text-transform: uppercase;
+    letter-spacing: 0.16em; font-size: 0.7rem; color: var(--yellow);
+    display: inline-flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before { content: ''; width: 26px; height: 2px; background: var(--yellow); display: inline-block; }
+  h1 {
+    font-family: var(--font-display); text-transform: uppercase;
+    font-weight: 600; letter-spacing: 0.01em; line-height: 1;
+    font-size: clamp(2rem, 5vw, 3.2rem); margin: 18px 0 14px; color: var(--bone);
+  }
+  .lede { color: var(--gray-2); font-size: 1.02rem; max-width: 54ch; margin: 0 0 48px; }
+  form { display: flex; flex-direction: column; gap: 22px; }
+  .field { display: flex; flex-direction: column; gap: 8px; }
+  .field label {
+    font-family: var(--font-mono); text-transform: uppercase;
+    letter-spacing: 0.1em; font-size: 0.7rem; color: var(--gray-2);
+  }
+  .field label .req { color: var(--yellow); margin-left: 4px; }
+  input, select, textarea {
+    width: 100%; background: var(--ink-2); border: 1px solid var(--line-strong);
+    border-radius: 2px; color: var(--bone); font-family: var(--font-body);
+    font-size: 0.96rem; padding: 13px 14px; outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+  input::placeholder, textarea::placeholder { color: var(--gray); }
+  input:focus, select:focus, textarea:focus { border-color: var(--yellow); background: var(--ink); }
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23f5b400'%3E%3Cpath d='M5.5 7.5l4.5 4.5 4.5-4.5' stroke='%23f5b400' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+    cursor: pointer;
+  }
+  select option { background: var(--ink-2); color: var(--bone); }
+  textarea { resize: vertical; min-height: 120px; font-family: var(--font-body); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em;
+    font-size: 0.78rem; font-weight: 500; padding: 15px 26px;
+    border-radius: 2px; border: 1px solid transparent; cursor: pointer;
+    background: var(--yellow); color: var(--ink); margin-top: 8px;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); background: #ffc733; box-shadow: 0 8px 32px var(--yellow-25); }
+  .btn svg { width: 15px; height: 15px; }
+  .status { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gray-2); min-height: 1.2em; }
+  .status.ok { color: var(--yellow); }
+  footer { border-top: 1px solid var(--line); padding: clamp(48px, 7vh, 80px) 0 40px; }
+  .foot-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
+  @media (min-width: 800px) { .foot-grid { grid-template-columns: 1.2fr 1fr; align-items: start; } }
+  .foot-brand { max-width: 40ch; }
+  .foot-brand img { height: 28px; width: auto; display: block; margin-bottom: 16px; }
+  .foot-brand p { color: var(--gray); font-size: 0.94rem; line-height: 1.6; margin-top: 12px; }
+  .foot-col { display: flex; flex-direction: column; align-items: flex-start; }
+  .foot-col h5 {
+    font-family: var(--font-mono); text-transform: uppercase;
+    letter-spacing: 0.14em; font-size: 0.68rem;
+    color: var(--gray); margin: 0 0 16px; font-weight: 500;
+  }
+  .foot-col a {
+    display: block; text-decoration: none;
+    color: var(--bone); font-size: 0.9rem;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+  }
+  .foot-col a:hover { color: var(--yellow); }
+  .foot-bottom {
+    margin-top: 56px; padding-top: 26px;
+    border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+    font-family: var(--font-mono); font-size: 0.64rem;
+    color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/" aria-label="Yieldwalker">
+    <img src="/img/logo.png" alt="Yieldwalker" />
+  </a>
+  <div class="lang-switch" role="group" aria-label="Language / Idioma">
+    <button class="lang-btn" data-lang="en" aria-label="English" title="English">
+      <svg viewBox="0 0 30 22" aria-hidden="true"><rect width="30" height="22" fill="#b22234"/><g fill="#fff"><rect y="1.7" width="30" height="1.7"/><rect y="5.1" width="30" height="1.7"/><rect y="8.5" width="30" height="1.7"/><rect y="11.9" width="30" height="1.7"/><rect y="15.3" width="30" height="1.7"/><rect y="18.7" width="30" height="1.7"/></g><rect width="13" height="12" fill="#3c3b6e"/></svg>
+    </button>
+    <button class="lang-btn" data-lang="pt" aria-label="Português" title="Português">
+      <svg viewBox="0 0 30 22" aria-hidden="true"><rect width="30" height="22" fill="#0b3a1e"/><polygon points="15,3 27,11 15,19 3,11" fill="#f5b400"/><circle cx="15" cy="11" r="4.6" fill="#1a3a6e"/></svg>
+    </button>
+    <button class="lang-btn" data-lang="es" aria-label="Español" title="Español">
+      <svg viewBox="0 0 30 22" aria-hidden="true"><rect width="30" height="22" fill="#aa151b"/><rect y="5.5" width="30" height="11" fill="#f1bf00"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <span class="eyebrow" data-t="eyebrow"></span>
+    <h1 data-t="h1"></h1>
+    <p class="lede" data-t="lede"></p>
+
+    <form id="contact-form">
+      <div class="field">
+        <label for="nome" data-t="lNome"></label>
+        <input type="text" id="nome" name="nome" required autocomplete="name" />
+      </div>
+      <div class="field">
+        <label for="email" data-t="lEmail"></label>
+        <input type="email" id="email" name="email" required autocomplete="email" />
+      </div>
+      <div class="field">
+        <label for="empresa" data-t="lEmpresa"></label>
+        <input type="text" id="empresa" name="empresa" required autocomplete="organization" />
+      </div>
+      <div class="field">
+        <label for="area" data-t="lArea"></label>
+        <input type="text" id="area" name="area" required />
+      </div>
+      <div class="field">
+        <label for="servico" data-t="lServico"></label>
+        <select id="servico" name="servico" required>
+          <option value="" data-t="oEscolha" selected disabled></option>
+          <option value="piloto" data-t="oPiloto"></option>
+          <option value="locacao" data-t="oLocacao"></option>
+          <option value="assistencia" data-t="oAssistencia"></option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="info" data-t="lInfo"></label>
+        <textarea id="info" name="info" rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-3-7-7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-t="submit"></span>
+      </button>
+      <p class="status" id="status"></p>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/img/logo.png" alt="Yieldwalker" />
+        <p data-t="footTagline"></p>
+      </div>
+      <div class="foot-col">
+        <h5 data-t="footServicesTitle"></h5>
+        <a href="/contato/index.html" data-t="footService1"></a>
+        <a href="/#locacao" data-t="footService2"></a>
+        <a href="/#assistencia" data-t="footService3"></a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Yieldwalker Tecnologia Robótica Ltda.</span>
+      <span data-t="footTag"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var DEST_EMAIL = 'miguel@yieldwalker.com';
+
+  var STRINGS = {
+    pt: {
+      htmlLang: 'pt-BR', title: 'Yieldwalker · Contato',
+      eyebrow: 'Fale com a gente',
+      h1: 'Vamos colocar o quadrúpede pra trabalhar.',
+      lede: 'Preencha os campos abaixo e retornamos com os próximos passos para locação, assistência técnica ou um piloto pago.',
+      lNome: 'Nome', lEmail: 'E-mail', lEmpresa: 'Empresa', lArea: 'Área da empresa',
+      lServico: 'Tipo de serviço', lInfo: 'Informação adicional (opcional)',
+      oEscolha: 'Selecione uma opção', oPiloto: 'Piloto pago', oLocacao: 'Locação', oAssistencia: 'Assistência',
+      submit: 'Enviar', sending: 'Abrindo seu e-mail para enviar...',
+      footTagline: 'Robótica quadrúpede com braço robótico e atuador para a indústria de infraestrutura.',
+      footServicesTitle: 'Serviços',
+      footService1: 'Pedir piloto pago', footService2: 'Locação de quadrúpede', footService3: 'Assistência técnica',
+      footTag: 'Uma empresa de Singapura com operação nos países latinos',
+      mailSubject: '[FormSite] Novo contato via site - Yieldwalker',
+      mailBody: 'Nome: {nome}\nE-mail: {email}\nEmpresa: {empresa}\nÁrea da empresa: {area}\nTipo de serviço: {servico}\n\nInformação adicional:\n{info}',
+    },
+    en: {
+      htmlLang: 'en', title: 'Yieldwalker · Contact',
+      eyebrow: 'Talk to us',
+      h1: "Let's put the quadruped to work.",
+      lede: "Fill in the fields below and we'll get back to you with next steps for rental, technical service or a paid pilot.",
+      lNome: 'Name', lEmail: 'Email', lEmpresa: 'Company', lArea: 'Company industry',
+      lServico: 'Service type', lInfo: 'Additional information (optional)',
+      oEscolha: 'Select an option', oPiloto: 'Paid pilot', oLocacao: 'Rental', oAssistencia: 'Service',
+      submit: 'Send', sending: 'Opening your email to send...',
+      footTagline: 'Quadruped robotics with a robotic arm and actuator for the infrastructure industry.',
+      footServicesTitle: 'Services',
+      footService1: 'Request a paid pilot', footService2: 'Quadruped rental', footService3: 'Technical service',
+      footTag: 'A Singapore company operating across Latin countries',
+      mailSubject: '[FormSite] New contact from the website - Yieldwalker',
+      mailBody: 'Name: {nome}\nEmail: {email}\nCompany: {empresa}\nCompany industry: {area}\nService type: {servico}\n\nAdditional information:\n{info}',
+    },
+    es: {
+      htmlLang: 'es', title: 'Yieldwalker · Contacto',
+      eyebrow: 'Hable con nosotros',
+      h1: 'Vamos a poner el cuadrúpedo a trabajar.',
+      lede: 'Complete los campos abajo y le responderemos con los próximos pasos para alquiler, asistencia técnica o un piloto pago.',
+      lNome: 'Nombre', lEmail: 'Correo electrónico', lEmpresa: 'Empresa', lArea: 'Área de la empresa',
+      lServico: 'Tipo de servicio', lInfo: 'Información adicional (opcional)',
+      oEscolha: 'Seleccione una opción', oPiloto: 'Piloto pago', oLocacao: 'Alquiler', oAssistencia: 'Asistencia',
+      submit: 'Enviar', sending: 'Abriendo su correo para enviar...',
+      footTagline: 'Robótica cuadrúpeda con brazo robótico y actuador para la industria de infraestructura.',
+      footServicesTitle: 'Servicios',
+      footService1: 'Solicitar piloto pago', footService2: 'Alquiler de cuadrúpedo', footService3: 'Asistencia técnica',
+      footTag: 'Una empresa de Singapur con operación en los países latinos',
+      mailSubject: '[FormSite] Nuevo contacto desde el sitio - Yieldwalker',
+      mailBody: 'Nombre: {nome}\nCorreo electrónico: {email}\nEmpresa: {empresa}\nÁrea de la empresa: {area}\nTipo de servicio: {servico}\n\nInformación adicional:\n{info}',
+    },
+  }
+
+  var SERVICE_LABEL_KEY = { piloto: 'oPiloto', locacao: 'oLocacao', assistencia: 'oAssistencia' }
+
+  function readCookie(name) {
+    var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'))
+    return m ? decodeURIComponent(m[1]) : null
+  }
+
+  function detectLang() {
+    var saved = localStorage.getItem('yw-lang')
+    if (saved && STRINGS[saved]) return saved
+    var geo = readCookie('yw-lang')
+    if (geo && STRINGS[geo]) return geo
+    return 'pt'
+  }
+
+  var lang = detectLang()
+
+  function applyLang(next) {
+    lang = next
+    var t = STRINGS[lang]
+    document.documentElement.lang = t.htmlLang
+    document.title = t.title
+    document.querySelectorAll('[data-t]').forEach(function (el) {
+      var key = el.getAttribute('data-t')
+      if (t[key] == null) return
+      el.textContent = t[key]
+    })
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang)
+    })
+    localStorage.setItem('yw-lang', lang)
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyLang(btn.getAttribute('data-lang'))
+    })
+  })
+
+  applyLang(lang)
+
+  var form = document.getElementById('contact-form')
+  var status = document.getElementById('status')
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault()
+    if (!form.reportValidity()) return
+
+    var t = STRINGS[lang]
+    var data = {
+      nome: form.nome.value.trim(),
+      email: form.email.value.trim(),
+      empresa: form.empresa.value.trim(),
+      area: form.area.value.trim(),
+      servico: t[SERVICE_LABEL_KEY[form.servico.value]] || form.servico.value,
+      info: form.info.value.trim() || '-',
+    }
+
+    var body = t.mailBody.replace(/\{(\w+)\}/g, function (_, k) { return data[k] })
+    var mailto = 'mailto:' + DEST_EMAIL
+      + '?subject=' + encodeURIComponent(t.mailSubject)
+      + '&body=' + encodeURIComponent(body)
+
+    status.textContent = t.sending
+    status.classList.add('ok')
+    window.location.href = mailto
+  })
+})()
+</script>
+
+</body>
+</html>

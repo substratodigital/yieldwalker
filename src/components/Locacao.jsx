@@ -1,11 +1,13 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { useLang, waLink } from '../i18n.jsx'
+import { useLang } from '../i18n.jsx'
 import { useReveal } from '../useReveal.js'
-import { WhatsAppIcon } from './Icons.jsx'
+import { ContactIcon, DrainageIcon, RoadFurnitureIcon, SmallAreaIcon, GuardrailIcon } from './Icons.jsx'
+
+const icons = [DrainageIcon, RoadFurnitureIcon, SmallAreaIcon, GuardrailIcon]
 
 export default function Locacao() {
-  const { lang, t } = useLang()
+  const { t } = useLang()
   const ref = useRef(null)
   useReveal(ref)
 
@@ -32,76 +34,57 @@ export default function Locacao() {
           scrollTrigger: { trigger: '.fullbleed', start: 'top 55%', once: true },
         }
       )
-      // linhas do datasheet entram em cascata
-      gsap.fromTo(
-        '.spec-row',
-        { opacity: 0, x: 24 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.5,
-          stagger: 0.05,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: '.spec-sheet', start: 'top 80%', once: true },
-        }
-      )
     }, ref)
     return () => ctx.revert()
   }, [])
 
   return (
-    <section id="locacao" ref={ref}>
+    <section ref={ref}>
       <div className="fullbleed">
-        <img src="/img/yw-02.webp" alt="A2-Pro cortando vegetação em talude inclinado à beira de rodovia" loading="lazy" />
+        <img src="/img/yw-02.webp" alt="QPD 2DoF BCN 1 cortando vegetação em talude inclinado à beira de rodovia" loading="lazy" />
         <div className="shade" />
         <div className="fullbleed-caption">
           <div className="wrap">
-            <span className="eyebrow">{t.locacao.eyebrow}</span>
-            <h3>UNITREE A2-PRO</h3>
+            <h3>QPD 2DoF BCN 1</h3>
             <div className="meta">
-              <span className="mono">YW UNIT Nº 01 — FIELD OPS</span>
-              <span className="mono yellow">45° MAX / IP56 / 5 M/S</span>
+              <span className="mono">YW UNIT Nº 01 / FIELD OPS</span>
+              <span className="mono yellow">30° MAX / IP56 / 5 M/S</span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="section-pad">
+      <div className="section-pad" id="locacao">
         <div className="wrap">
           <div className="section-head" data-rv>
-            <h2 className="display-lg">{t.locacao.h2}</h2>
+            <span className="eyebrow">{t.locacao.eyebrow}</span>
+            <h2 className="display-lg">
+              {t.locacao.h2a}<span className="accent">{t.locacao.h2b}</span>
+            </h2>
             <p className="lede">{t.locacao.lede}</p>
           </div>
 
-          <div className="twocol">
-            <div data-rv>
-              <ul className="feature-list">
-                {t.locacao.feats.map((f) => (
-                  <li key={f.b}>
-                    <span><b>{f.b}</b>{f.rest}</span>
-                  </li>
-                ))}
-              </ul>
-              <div style={{ marginTop: 28 }}>
-                <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={waLink(lang, 'locacao2')}>
-                  <WhatsAppIcon />
-                  {t.locacao.cta}
-                </a>
-              </div>
-            </div>
+          <div className="reason-grid cols-4" data-rv>
+            {t.locacao.challenges.map((c, i) => {
+              const Icon = icons[i]
+              return (
+                <article className="reason-card" key={c.title}>
+                  <span className="r-icon"><Icon /></span>
+                  <h4>{c.title}</h4>
+                  <p>{c.p}</p>
+                  <div className="img-slot" aria-hidden="true">
+                    <span>{t.locacao.imgHint}</span>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
 
-            <div className="spec-sheet" data-rv>
-              <div className="spec-head mono">
-                <span>{t.locacao.ssTitle}</span>
-                <span className="model">A2-PRO</span>
-              </div>
-              {t.locacao.specs.map((s) => (
-                <div className="spec-row" key={s.k}>
-                  <span className="k">{s.k}</span>
-                  <span className="v">{s.v}</span>
-                </div>
-              ))}
-            </div>
+          <div className="locacao-cta" data-rv>
+            <a className="btn btn-primary" href="/contato/index.html">
+              <ContactIcon />
+              {t.locacao.cta}
+            </a>
           </div>
         </div>
       </div>

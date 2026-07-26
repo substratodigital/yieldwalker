@@ -1,10 +1,10 @@
 import { useRef } from 'react'
-import { useLang, waLink } from '../i18n.jsx'
+import { useLang } from '../i18n.jsx'
 import { useReveal } from '../useReveal.js'
-import { WhatsAppIcon } from './Icons.jsx'
+import { ContactIcon } from './Icons.jsx'
 
 export default function CtaBand() {
-  const { lang, t } = useLang()
+  const { t } = useLang()
   const ref = useRef(null)
   useReveal(ref)
 
@@ -15,11 +15,11 @@ export default function CtaBand() {
       <div className="wrap" data-rv>
         <span className="eyebrow">{t.cta.eyebrow}</span>
         <h2>
-          {t.cta.h2a} <span className="accent">{t.cta.h2b}</span>
+          {t.cta.h2a}<span className="accent">{t.cta.h2b}</span>{t.cta.h2c}<span className="accent">{t.cta.h2d}</span>
         </h2>
         <div className="cta-ctas">
-          <a className="btn btn-primary" target="_blank" rel="noopener noreferrer" href={waLink(lang, 'generic')}>
-            <WhatsAppIcon />
+          <a className="btn btn-primary" href="/contato/index.html">
+            <ContactIcon />
             {t.cta.btn}
           </a>
         </div>

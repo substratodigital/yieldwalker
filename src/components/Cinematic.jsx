@@ -40,13 +40,15 @@ export default function Cinematic() {
     <section className="cinematic" ref={ref} aria-label={t.hero.unit}>
       <div className="cinematic-sticky">
         <div className="cinematic-frame">
-          <img src="/img/yw-01.webp" alt="Robô quadrúpede A2-Pro com braço de corte operando em talude de rodovia" loading="lazy" />
+          <img src="/img/yw-01.webp" alt="Robô quadrúpede QPD 2DoF BCN 1 com braço de corte operando em talude de rodovia" loading="lazy" />
           <span className="mono cinematic-tag-tl">{t.hero.unit}</span>
           <span className="mono cinematic-tag-br">{t.hero.config}</span>
         </div>
         <div className="cinematic-caption">
-          <span className="eyebrow">YW — 01</span>
-          <h3>{t.hero.eyebrow}</h3>
+          <span className="eyebrow">YW / 01</span>
+          <h3>
+            {t.hero.eyebrowA}<span className="accent">{t.hero.eyebrowB}</span>{t.hero.eyebrowC}<span className="accent">{t.hero.eyebrowD}</span>
+          </h3>
         </div>
       </div>
     </section>

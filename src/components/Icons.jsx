@@ -8,25 +8,11 @@ const stroke = {
   strokeLinejoin: 'round',
 }
 
-/* Marca: Y invertido → corpo + pernas + braço articulado */
-export function Mark({ className }) {
-  return (
-    <svg className={className ? `mark ${className}` : 'mark'} viewBox="0 0 120 100" aria-hidden="true">
-      <g fill="none" stroke="currentColor" strokeWidth="9.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="38,92 38,58 78,58 78,92" />
-        <polyline points="40,46 12,18 60,34" />
-        <polyline points="51,48 51,34 67,34 67,48" />
-      </g>
-    </svg>
-  )
-}
-
-export function WhatsAppIcon() {
+export function ContactIcon() {
   return (
     <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
       <g {...stroke}>
-        <path d="M12 3.5a8.5 8.5 0 0 1 0 17 8.4 8.4 0 0 1-4.2-1.1L4 20.5l1.1-3.7A8.5 8.5 0 0 1 12 3.5Z" />
-        <path d="M9.3 8.9c.5 2.8 2.9 5.2 5.8 5.8l.9-1.3 2 .9c-.2 1.4-1.5 2.3-2.9 2-3.9-.9-7-4-7.9-7.9-.3-1.4.6-2.7 2-2.9l.9 2-1 1.4Z" />
+        <path d="M3 11 21 3l-8 18-3-7-7-3Z" />
       </g>
     </svg>
   )
@@ -93,94 +79,86 @@ export function PilotIcon() {
   )
 }
 
-/* Fases do piloto */
-export function SimIcon() {
+
+/* Onde a roçagem mais sofre */
+export function DrainageIcon() {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <g {...stroke} strokeWidth={1.8}>
-        <rect x="7" y="9" width="26" height="17" rx="1.5" />
-        <line x1="14" y1="32" x2="26" y2="32" />
-        <line x1="20" y1="26" x2="20" y2="32" />
-        <path d="M12 21c3-6 6 2 9-4s5 1 7-3" />
+        <path d="M4 12h10l6 16 6-16h10" />
+        <path d="M15.5 22c1.5-1.4 3-1.4 4.5 0s3 1.4 4.5 0" />
       </g>
     </svg>
   )
 }
 
-export function TeleopIcon() {
+export function RoadFurnitureIcon() {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <g {...stroke} strokeWidth={1.8}>
-        <path d="M12 14h16a5 5 0 0 1 5 5l-1.4 8a3 3 0 0 1-5.2 1.4L23 25h-6l-3.4 3.4A3 3 0 0 1 8.4 27L7 19a5 5 0 0 1 5-5Z" />
-        <line x1="14" y1="18" x2="14" y2="22" />
-        <line x1="12" y1="20" x2="16" y2="20" />
-        <circle cx="27" cy="20" r="1.3" />
+        <circle cx="20" cy="20" r="9" />
+        <line x1="20" y1="2" x2="20" y2="9" />
+        <line x1="20" y1="31" x2="20" y2="38" />
+        <line x1="2" y1="20" x2="9" y2="20" />
+        <line x1="31" y1="20" x2="38" y2="20" />
       </g>
     </svg>
   )
 }
 
-export function HybridIcon() {
+export function SmallAreaIcon() {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <g {...stroke} strokeWidth={1.8}>
-        <path d="M7 13h8l10 14h8" />
-        <path d="M7 27h8" />
-        <path d="M21 13h4" />
-        <polyline points="29,9 33,13 29,17" />
-        <polyline points="29,23 33,27 29,31" />
+        <rect x="6" y="7" width="11" height="9" rx="1.4" strokeDasharray="2 2" />
+        <rect x="23" y="10" width="10" height="8" rx="1.4" strokeDasharray="2 2" />
+        <rect x="12" y="23" width="12" height="10" rx="1.4" strokeDasharray="2 2" />
       </g>
     </svg>
   )
 }
 
-export function AutoIcon() {
+export function GuardrailIcon() {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <g {...stroke} strokeWidth={1.8}>
-        <circle cx="20" cy="20" r="12" />
-        <circle cx="20" cy="20" r="4" />
-        <line x1="20" y1="4" x2="20" y2="10" />
-        <line x1="20" y1="30" x2="20" y2="36" />
-        <line x1="4" y1="20" x2="10" y2="20" />
-        <line x1="30" y1="20" x2="36" y2="20" />
+        <path d="M4 16c3-3 5-3 8 0s5 3 8 0 5-3 8 0 5-3 8 0" />
+        <line x1="10" y1="18" x2="10" y2="30" />
+        <line x1="22" y1="18" x2="22" y2="30" />
+        <line x1="34" y1="18" x2="34" y2="30" />
       </g>
     </svg>
   )
 }
 
-/* Por que importa */
-export function LaborIcon() {
+/* Benefícios intangíveis do piloto pago */
+export function ElectricIcon() {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <g {...stroke} strokeWidth={1.8}>
-        <circle cx="15" cy="13" r="4.5" />
-        <path d="M7 31c0-5 3.5-8 8-8s8 3 8 8" />
-        <circle cx="28" cy="14" r="3.5" strokeDasharray="2.5 3" />
-        <path d="M26 30c.5-4 2.6-6.4 6-7" strokeDasharray="2.5 3" />
+        <path d="M21 4 9 23h9l-3 13 15-20h-9l3-12Z" />
       </g>
     </svg>
   )
 }
 
-export function HazardIcon() {
+export function ESGIcon() {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <g {...stroke} strokeWidth={1.8}>
-        <path d="M20 7 35 32H5L20 7Z" />
-        <line x1="20" y1="16" x2="20" y2="24" />
-        <circle cx="20" cy="28" r="0.4" />
+        <path d="M10 30c-2-10 2-19 20-22 2 15-6 22-20 22Z" />
+        <path d="M10 30c4-8 10-13 18-16" />
       </g>
     </svg>
   )
 }
 
-export function RiskIcon() {
+export function MonitorIcon() {
   return (
     <svg viewBox="0 0 40 40" aria-hidden="true">
       <g {...stroke} strokeWidth={1.8}>
-        <path d="M20 5l12 4v9c0 8-5 13-12 17-7-4-12-9-12-17V9l12-4Z" />
-        <path d="M15 20l4 4 7-8" />
+        <circle cx="20" cy="20" r="14" strokeDasharray="2.5 3" />
+        <path d="M8 20h6l3-7 4 14 3-7h6" />
       </g>
     </svg>
   )
