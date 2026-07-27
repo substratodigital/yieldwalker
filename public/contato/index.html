@@ -104,6 +104,9 @@
   .btn svg { width: 15px; height: 15px; }
   .status { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gray-2); min-height: 1.2em; }
   .status.ok { color: var(--yellow); }
+  .status.error { color: #ff6b5e; }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none !important; }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   footer { border-top: 1px solid var(--line); padding: clamp(48px, 7vh, 80px) 0 40px; }
   .foot-grid { display: grid; grid-template-columns: 1fr; gap: 48px; }
   @media (min-width: 800px) { .foot-grid { grid-template-columns: 1.2fr 1fr; align-items: start; } }
@@ -187,6 +190,10 @@
         <label for="info" data-t="lInfo"></label>
         <textarea id="info" name="info" rows="5"></textarea>
       </div>
+      <div class="field hp-field" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+      </div>
       <button type="submit" class="btn">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 21 3l-8 18-3-7-7-3Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span data-t="submit"></span>
@@ -219,8 +226,6 @@
 
 <script>
 (function () {
-  var DEST_EMAIL = 'miguel@yieldwalker.com';
-
   var STRINGS = {
     pt: {
       htmlLang: 'pt-BR', title: 'Yieldwalker · Contato',
@@ -230,13 +235,13 @@
       lNome: 'Nome', lEmail: 'E-mail', lEmpresa: 'Empresa', lArea: 'Área da empresa',
       lServico: 'Tipo de serviço', lInfo: 'Informação adicional (opcional)',
       oEscolha: 'Selecione uma opção', oPiloto: 'Piloto pago', oLocacao: 'Locação', oAssistencia: 'Assistência',
-      submit: 'Enviar', sending: 'Abrindo seu e-mail para enviar...',
+      submit: 'Enviar', sending: 'Enviando...',
+      success: 'Mensagem enviada. Vamos responder em breve.',
+      error: 'Não conseguimos enviar agora. Tente novamente ou escreva para miguel@yieldwalker.com.',
       footTagline: 'Robótica quadrúpede com braço robótico e atuador para a indústria de infraestrutura.',
       footServicesTitle: 'Serviços',
       footService1: 'Pedir piloto pago', footService2: 'Locação de quadrúpede', footService3: 'Assistência técnica',
       footTag: 'Uma empresa de Singapura com operação nos países latinos',
-      mailSubject: '[FormSite] Novo contato via site - Yieldwalker',
-      mailBody: 'Nome: {nome}\nE-mail: {email}\nEmpresa: {empresa}\nÁrea da empresa: {area}\nTipo de serviço: {servico}\n\nInformação adicional:\n{info}',
     },
     en: {
       htmlLang: 'en', title: 'Yieldwalker · Contact',
@@ -246,13 +251,13 @@
       lNome: 'Name', lEmail: 'Email', lEmpresa: 'Company', lArea: 'Company industry',
       lServico: 'Service type', lInfo: 'Additional information (optional)',
       oEscolha: 'Select an option', oPiloto: 'Paid pilot', oLocacao: 'Rental', oAssistencia: 'Service',
-      submit: 'Send', sending: 'Opening your email to send...',
+      submit: 'Send', sending: 'Sending...',
+      success: "Message sent. We'll get back to you soon.",
+      error: "Couldn't send right now. Try again or email miguel@yieldwalker.com.",
       footTagline: 'Quadruped robotics with a robotic arm and actuator for the infrastructure industry.',
       footServicesTitle: 'Services',
       footService1: 'Request a paid pilot', footService2: 'Quadruped rental', footService3: 'Technical service',
       footTag: 'A Singapore company operating across Latin countries',
-      mailSubject: '[FormSite] New contact from the website - Yieldwalker',
-      mailBody: 'Name: {nome}\nEmail: {email}\nCompany: {empresa}\nCompany industry: {area}\nService type: {servico}\n\nAdditional information:\n{info}',
     },
     es: {
       htmlLang: 'es', title: 'Yieldwalker · Contacto',
@@ -262,13 +267,13 @@
       lNome: 'Nombre', lEmail: 'Correo electrónico', lEmpresa: 'Empresa', lArea: 'Área de la empresa',
       lServico: 'Tipo de servicio', lInfo: 'Información adicional (opcional)',
       oEscolha: 'Seleccione una opción', oPiloto: 'Piloto pago', oLocacao: 'Alquiler', oAssistencia: 'Asistencia',
-      submit: 'Enviar', sending: 'Abriendo su correo para enviar...',
+      submit: 'Enviar', sending: 'Enviando...',
+      success: 'Mensaje enviado. Le responderemos pronto.',
+      error: 'No pudimos enviar ahora. Intente de nuevo o escriba a miguel@yieldwalker.com.',
       footTagline: 'Robótica cuadrúpeda con brazo robótico y actuador para la industria de infraestructura.',
       footServicesTitle: 'Servicios',
       footService1: 'Solicitar piloto pago', footService2: 'Alquiler de cuadrúpedo', footService3: 'Asistencia técnica',
       footTag: 'Una empresa de Singapur con operación en los países latinos',
-      mailSubject: '[FormSite] Nuevo contacto desde el sitio - Yieldwalker',
-      mailBody: 'Nombre: {nome}\nCorreo electrónico: {email}\nEmpresa: {empresa}\nÁrea de la empresa: {area}\nTipo de servicio: {servico}\n\nInformación adicional:\n{info}',
     },
   }
 
@@ -315,6 +320,7 @@
 
   var form = document.getElementById('contact-form')
   var status = document.getElementById('status')
+  var submitBtn = form.querySelector('button[type="submit"]')
 
   form.addEventListener('submit', function (e) {
     e.preventDefault()
@@ -328,16 +334,34 @@
       area: form.area.value.trim(),
       servico: t[SERVICE_LABEL_KEY[form.servico.value]] || form.servico.value,
       info: form.info.value.trim() || '-',
+      website: form.website.value,
     }
 
-    var body = t.mailBody.replace(/\{(\w+)\}/g, function (_, k) { return data[k] })
-    var mailto = 'mailto:' + DEST_EMAIL
-      + '?subject=' + encodeURIComponent(t.mailSubject)
-      + '&body=' + encodeURIComponent(body)
-
+    submitBtn.disabled = true
     status.textContent = t.sending
+    status.classList.remove('error')
     status.classList.add('ok')
-    window.location.href = mailto
+
+    fetch('/.netlify/functions/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then(function (res) { if (!res.ok) throw new Error('send_failed'); return res.json() })
+      .then(function () {
+        status.textContent = t.success
+        status.classList.remove('error')
+        status.classList.add('ok')
+        form.reset()
+      })
+      .catch(function () {
+        status.textContent = t.error
+        status.classList.remove('ok')
+        status.classList.add('error')
+      })
+      .finally(function () {
+        submitBtn.disabled = false
+      })
   })
 })()
 </script>
