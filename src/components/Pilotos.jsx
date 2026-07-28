@@ -27,7 +27,6 @@ export default function Pilotos() {
                 <span className="stage-num">{s.num}</span>
                 <h4>{s.h4}</h4>
               </div>
-              <span className="stage-date mono yellow">{s.date}</span>
               <p>{s.p}</p>
               <div className="stage-tags">
                 {s.tags.map((tag) => (

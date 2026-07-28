@@ -104,8 +104,8 @@ export const translations = {
       lede: 'Bordas de drenagem, dispositivos viários, áreas pequenas e bordas de faixa de domínio com obstáculos como guard-rails e aceiro concentram o maior custo e risco da manutenção manual, exatamente aí que o QPD 2DoF BCN 1 rende mais.',
       challenges: [
         { title: 'Bordas de Drenagem', p: 'Áreas onde a vegetação cresce próxima a estruturas de drenagem. Tratores podem operar nessas regiões, mas frequentemente causam danos pela pressão do equipamento ou contato das ferramentas de corte. O acabamento final é normalmente feito de forma manual.' },
-        { title: 'Dispositivos Viários', p: 'Pequenos fragmentos de vegetação onde não é possível operar com braços articulados ou implementos de trator. Robôs tradicionais também enfrentam limitações de acabamento. O custo de mobilizar equipamentos muitas vezes não se justifica pela baixa densidade da vegetação.' },
-        { title: 'Pequenas Áreas', p: 'Grandes áreas com múltiplas características que exigem combinação de equipamentos: tratores para seções extensas, robôs tradicionais em terrenos inclinados e trabalho manual para acabamento e áreas de difícil acesso.' },
+        { title: 'Dispositivos Viários', p: 'Canteiros centrais, rotatórias e entornos de placas de sinalização, onde o layout do local e obstáculos fixos impedem o acesso de braços articulados e implementos de trator. Máquinas tradicionais também enfrentam limitações de manobra nesses espaços.' },
+        { title: 'Pequenas Áreas', p: 'Pequenos fragmentos de vegetação onde não é possível operar com braços articulados ou implementos de trator. Robôs tradicionais também enfrentam limitações de acabamento. O custo de mobilizar equipamentos muitas vezes não se justifica pela baixa densidade da vegetação.' },
         { title: 'Guard-Rails Metálicos', p: 'Áreas onde a vegetação cresce embaixo e ao redor de guard-rails metálicos. A própria estrutura impede o acesso de implementos de trator e robôs tradicionais. Nessas regiões, a intervenção é feita exclusivamente de forma manual.' },
       ],
       cta: 'Pedir Piloto Pago',
@@ -176,19 +176,16 @@ export const translations = {
       stages: [
         {
           num: '01', h4: 'Full Operado',
-          date: '1ª versão em campo: julho de 2027',
           p: 'Operador remoto controla locomoção e braço robótico. Trabalhador sai da pista. Toda decisão passa pelo humano.',
           tags: ['Segurança imediata', 'sem ruptura operacional'],
         },
         {
           num: '02', h4: 'Híbrido',
-          date: '1ª versão em campo: dezembro de 2027',
           p: 'Humano navega. Braço robótico detecta e corta de forma autônoma.',
           tags: ['Redução de OPEX', 'com autonomia parcial'],
         },
         {
           num: '03', h4: 'Full Autônomo',
-          date: '1ª versão em campo: julho de 2028',
           p: 'Plataforma e braço operam de forma independente. Operador define missão via GPS e consegue realizar múltiplas funções.',
           tags: ['Máxima escala', 'custo por m² mínimo'],
         },
@@ -282,8 +279,8 @@ export const translations = {
       lede: "Drainage edges, road furniture, small areas and right-of-way edges with obstacles like guardrails and firebreaks carry the highest cost and risk in manual upkeep, exactly where the QPD 2DoF BCN 1 performs best.",
       challenges: [
         { title: 'Drainage Edges', p: "Areas where vegetation grows close to drainage structures. Tractors can operate here, but often cause damage from equipment pressure or contact with cutting tools. Final finishing is usually done by hand." },
-        { title: 'Road Furniture', p: "Small fragments of vegetation where articulated arms or tractor implements can't operate. Traditional robots also struggle with finish quality here. Mobilizing equipment often isn't worth it given the low vegetation density." },
-        { title: 'Small Areas', p: 'Large areas with mixed characteristics that require a combination of equipment: tractors for long sections, traditional robots on sloped terrain, and manual work for finishing and hard-to-reach spots.' },
+        { title: 'Road Furniture', p: "Traffic islands, roundabouts and areas around signage posts, where the site layout and fixed obstacles block access for articulated arms and tractor implements. Traditional machines also struggle to maneuver in these spaces." },
+        { title: 'Small Areas', p: "Small fragments of vegetation where articulated arms or tractor implements can't operate. Traditional robots also struggle with finish quality here. Mobilizing equipment often isn't worth it given the low vegetation density." },
         { title: 'Metal Guardrails', p: 'Areas where vegetation grows under and around metal guardrails. The structure itself blocks access for tractor implements and traditional robots. In these spots, intervention is done exclusively by hand.' },
       ],
       cta: 'Request a Paid Pilot',
@@ -354,19 +351,16 @@ export const translations = {
       stages: [
         {
           num: '01', h4: 'Full Operated',
-          date: 'First field version: July 2027',
           p: 'A remote operator controls locomotion and the robotic arm. The worker leaves the shoulder. Every decision goes through a human.',
           tags: ['Immediate safety', 'no operational disruption'],
         },
         {
           num: '02', h4: 'Hybrid',
-          date: 'First field version: December 2027',
           p: 'A human navigates. The robotic arm detects and cuts autonomously.',
           tags: ['Lower OPEX', 'with partial autonomy'],
         },
         {
           num: '03', h4: 'Full Autonomous',
-          date: 'First field version: July 2028',
           p: 'Platform and arm operate independently. The operator sets the mission via GPS and can run multiple jobs at once.',
           tags: ['Maximum scale', 'lowest cost per m²'],
         },
@@ -460,8 +454,8 @@ export const translations = {
       lede: 'Bordes de drenaje, dispositivos viales, áreas pequeñas y bordes de la franja de dominio con obstáculos como guardarraíles y cortafuegos concentran el mayor costo y riesgo del mantenimiento manual, justo donde el QPD 2DoF BCN 1 rinde más.',
       challenges: [
         { title: 'Bordes de Drenaje', p: 'Áreas donde la vegetación crece cerca de estructuras de drenaje. Los tractores pueden operar en estas zonas, pero suelen causar daños por la presión del equipo o el contacto de las herramientas de corte. El acabado final normalmente se hace de forma manual.' },
-        { title: 'Dispositivos Viales', p: 'Pequeños fragmentos de vegetación donde no es posible operar con brazos articulados o implementos de tractor. Los robots tradicionales también enfrentan limitaciones de acabado. El costo de movilizar equipos muchas veces no se justifica por la baja densidad de la vegetación.' },
-        { title: 'Áreas Pequeñas', p: 'Grandes áreas con múltiples características que exigen una combinación de equipos: tractores para tramos extensos, robots tradicionales en terrenos inclinados y trabajo manual para el acabado y zonas de difícil acceso.' },
+        { title: 'Dispositivos Viales', p: 'Islas de tráfico, rotondas y entornos de señalización, donde el diseño del lugar y los obstáculos fijos impiden el acceso de brazos articulados e implementos de tractor. Las máquinas tradicionales también enfrentan limitaciones de maniobra en estos espacios.' },
+        { title: 'Áreas Pequeñas', p: 'Pequeños fragmentos de vegetación donde no es posible operar con brazos articulados o implementos de tractor. Los robots tradicionales también enfrentan limitaciones de acabado. El costo de movilizar equipos muchas veces no se justifica por la baja densidad de la vegetación.' },
         { title: 'Guardarraíles Metálicos', p: 'Áreas donde la vegetación crece debajo y alrededor de guardarraíles metálicos. La propia estructura impide el acceso de implementos de tractor y robots tradicionales. En estas zonas, la intervención se realiza exclusivamente de forma manual.' },
       ],
       cta: 'Solicitar Piloto Pago',
@@ -532,19 +526,16 @@ export const translations = {
       stages: [
         {
           num: '01', h4: 'Full Operado',
-          date: '1ª versión en campo: julio de 2027',
           p: 'Un operador remoto controla la locomoción y el brazo robótico. El trabajador sale de la vía. Toda decisión pasa por el humano.',
           tags: ['Seguridad inmediata', 'sin ruptura operativa'],
         },
         {
           num: '02', h4: 'Híbrido',
-          date: '1ª versión en campo: diciembre de 2027',
           p: 'El humano navega. El brazo robótico detecta y corta de forma autónoma.',
           tags: ['Reducción de OPEX', 'con autonomía parcial'],
         },
         {
           num: '03', h4: 'Full Autónomo',
-          date: '1ª versión en campo: julio de 2028',
           p: 'Plataforma y brazo operan de forma independiente. El operador define la misión vía GPS y puede realizar múltiples funciones.',
           tags: ['Máxima escala', 'costo por m² mínimo'],
         },
