@@ -36,7 +36,7 @@ export default function Assistencia() {
 
         <div className="service-grid" data-rv>
           <div className="service-media">
-            <img src="/img/yw-03.webp" alt="Detalhe do braço de corte do QPD 2DoF BCN 1 em operação" loading="lazy" />
+            <img src="/img/assistencia-manual.webp" alt="Roçadores fazendo manutenção manual de vegetação na faixa de domínio de rodovia" loading="lazy" />
             <span className="mono tag">YW SAFETY / WORKER RISK</span>
           </div>
           <div className="service-body">
