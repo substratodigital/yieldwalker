@@ -5,6 +5,7 @@ import { useReveal } from '../useReveal.js'
 import { ContactIcon, DrainageIcon, RoadFurnitureIcon, SmallAreaIcon, GuardrailIcon } from './Icons.jsx'
 
 const icons = [DrainageIcon, RoadFurnitureIcon, SmallAreaIcon, GuardrailIcon]
+const images = ['/img/locacao-drenagem.webp', '/img/locacao-viario.webp', '/img/locacao-pequena.webp', '/img/locacao-guardrail.webp']
 
 export default function Locacao() {
   const { t } = useLang()
@@ -72,8 +73,8 @@ export default function Locacao() {
                   <span className="r-icon"><Icon /></span>
                   <h4>{c.title}</h4>
                   <p>{c.p}</p>
-                  <div className="img-slot" aria-hidden="true">
-                    <span>{t.locacao.imgHint}</span>
+                  <div className="card-img">
+                    <img src={images[i]} alt={c.title} loading="lazy" />
                   </div>
                 </article>
               )

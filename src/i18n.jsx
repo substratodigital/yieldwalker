@@ -61,7 +61,7 @@ export const translations = {
       config: 'Configuração padrão',
     },
     pillars: {
-      eyebrow: '0 - Modelo de gestão de corte de grama',
+      eyebrow: '0 - Gestão de corte de grama',
       h2a: 'Monitorar, planejar, ',
       h2b: 'executar',
       h2c: ': o ciclo que mantém a ',
@@ -102,7 +102,6 @@ export const translations = {
       h2a: 'Quatro frentes onde ',
       h2b: 'a roçagem convencional trava.',
       lede: 'Bordas de drenagem, dispositivos viários, áreas pequenas e bordas de faixa de domínio com obstáculos como guard-rails e aceiro concentram o maior custo e risco da manutenção manual, exatamente aí que o QPD 2DoF BCN 1 rende mais.',
-      imgHint: 'Espaço para foto',
       challenges: [
         { title: 'Bordas de Drenagem', p: 'Áreas onde a vegetação cresce próxima a estruturas de drenagem. Tratores podem operar nessas regiões, mas frequentemente causam danos pela pressão do equipamento ou contato das ferramentas de corte. O acabamento final é normalmente feito de forma manual.' },
         { title: 'Dispositivos Viários', p: 'Pequenos fragmentos de vegetação onde não é possível operar com braços articulados ou implementos de trator. Robôs tradicionais também enfrentam limitações de acabamento. O custo de mobilizar equipamentos muitas vezes não se justifica pela baixa densidade da vegetação.' },
@@ -240,7 +239,7 @@ export const translations = {
       config: 'Standard configuration',
     },
     pillars: {
-      eyebrow: '0 - Grass Mowing Management Model',
+      eyebrow: '0 - Grass Mowing Management',
       h2a: 'Monitor, plan, ',
       h2b: 'execute',
       h2c: ': the cycle that keeps the ',
@@ -281,7 +280,6 @@ export const translations = {
       h2a: 'Four fronts where ',
       h2b: 'conventional mowing gets stuck.',
       lede: "Drainage edges, road furniture, small areas and right-of-way edges with obstacles like guardrails and firebreaks carry the highest cost and risk in manual upkeep, exactly where the QPD 2DoF BCN 1 performs best.",
-      imgHint: 'Space for photo',
       challenges: [
         { title: 'Drainage Edges', p: "Areas where vegetation grows close to drainage structures. Tractors can operate here, but often cause damage from equipment pressure or contact with cutting tools. Final finishing is usually done by hand." },
         { title: 'Road Furniture', p: "Small fragments of vegetation where articulated arms or tractor implements can't operate. Traditional robots also struggle with finish quality here. Mobilizing equipment often isn't worth it given the low vegetation density." },
@@ -419,7 +417,7 @@ export const translations = {
       config: 'Configuración estándar',
     },
     pillars: {
-      eyebrow: '0 - Modelo de gestión de corte de césped',
+      eyebrow: '0 - Gestión de corte de césped',
       h2a: 'Monitorear, planificar, ',
       h2b: 'ejecutar',
       h2c: ': el ciclo que mantiene la ',
@@ -460,7 +458,6 @@ export const translations = {
       h2a: 'Cuatro frentes donde ',
       h2b: 'el corte convencional se traba.',
       lede: 'Bordes de drenaje, dispositivos viales, áreas pequeñas y bordes de la franja de dominio con obstáculos como guardarraíles y cortafuegos concentran el mayor costo y riesgo del mantenimiento manual, justo donde el QPD 2DoF BCN 1 rinde más.',
-      imgHint: 'Espacio para foto',
       challenges: [
         { title: 'Bordes de Drenaje', p: 'Áreas donde la vegetación crece cerca de estructuras de drenaje. Los tractores pueden operar en estas zonas, pero suelen causar daños por la presión del equipo o el contacto de las herramientas de corte. El acabado final normalmente se hace de forma manual.' },
         { title: 'Dispositivos Viales', p: 'Pequeños fragmentos de vegetación donde no es posible operar con brazos articulados o implementos de tractor. Los robots tradicionales también enfrentan limitaciones de acabado. El costo de movilizar equipos muchas veces no se justifica por la baja densidad de la vegetación.' },
