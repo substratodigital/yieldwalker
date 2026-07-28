@@ -172,7 +172,6 @@ export const translations = {
       h2a: 'A ',
       h2b: 'Solução.',
       lede: 'Três configurações. Uma jornada de adoção progressiva.',
-      imgHint: 'Espaço para foto',
       stages: [
         {
           num: '01', h4: 'Full Operado',
@@ -347,7 +346,6 @@ export const translations = {
       h2a: 'The ',
       h2b: 'Solution.',
       lede: 'Three configurations. One journey of progressive adoption.',
-      imgHint: 'Space for photo',
       stages: [
         {
           num: '01', h4: 'Full Operated',
@@ -522,7 +520,6 @@ export const translations = {
       h2a: 'La ',
       h2b: 'Solución.',
       lede: 'Tres configuraciones. Un camino de adopción progresiva.',
-      imgHint: 'Espacio para foto',
       stages: [
         {
           num: '01', h4: 'Full Operado',
