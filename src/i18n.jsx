@@ -160,7 +160,7 @@ export const translations = {
         { method: 'Cortador com rodas', area: { label: 'Média', level: 'mid' }, effort: { label: 'Médio', level: 'mid' } },
         { method: 'Roçagem Manual', area: { label: 'Baixa', level: 'low' }, effort: { label: 'Alto', level: 'high' } },
       ],
-      benefitsH2: 'Benefícios que não aparecem na planilha de custo.',
+      benefitsH2: 'Benefícios que precisam entrar na conta.',
       benefits: [
         { h4: '100% elétrico', p: 'Reduz o consumo de combustível fóssil em campo, sem emissões diretas na operação de corte.' },
         { h4: 'Crédito de descarbonização', p: 'Gera dado real de operação para relatórios ESG, relevante para stakeholders e critério de pontuação em licitações.' },
@@ -334,7 +334,7 @@ export const translations = {
         { method: 'Wheeled Cutter', area: { label: 'Medium', level: 'mid' }, effort: { label: 'Medium', level: 'mid' } },
         { method: 'Manual Mowing', area: { label: 'Low', level: 'low' }, effort: { label: 'High', level: 'high' } },
       ],
-      benefitsH2: "Benefits that don't show up in the cost spreadsheet.",
+      benefitsH2: 'Benefits that belong in the math.',
       benefits: [
         { h4: '100% Electric', p: 'Cuts fossil-fuel consumption in the field, no direct emissions from the mowing operation.' },
         { h4: 'Decarbonization Credit', p: 'Generates real operational data for ESG reporting, relevant for stakeholders and scoring criteria in public tenders.' },
@@ -508,7 +508,7 @@ export const translations = {
         { method: 'Cortadora con Ruedas', area: { label: 'Media', level: 'mid' }, effort: { label: 'Medio', level: 'mid' } },
         { method: 'Corte Manual', area: { label: 'Baja', level: 'low' }, effort: { label: 'Alto', level: 'high' } },
       ],
-      benefitsH2: 'Beneficios que no aparecen en la planilla de costos.',
+      benefitsH2: 'Beneficios que necesitan entrar en la cuenta.',
       benefits: [
         { h4: '100% Eléctrico', p: 'Reduce el consumo de combustible fósil en campo, sin emisiones directas en la operación de corte.' },
         { h4: 'Crédito de Descarbonización', p: 'Genera datos reales de operación para informes ESG, relevante para stakeholders y criterios de puntuación en licitaciones.' },
