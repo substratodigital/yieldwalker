@@ -2,7 +2,7 @@ import { useLang } from '../i18n.jsx'
 
 export default function Footer() {
   const { t } = useLang()
-  const links = ['/contato/index.html', '#locacao', '#assistencia']
+  const links = ['/contato/index.html', '/contato/index.html', '/contato/index.html']
 
   return (
     <footer>
