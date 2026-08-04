@@ -49,7 +49,7 @@ export const translations = {
       h1_2: 'a roçagem mais sofre:',
       h1_3: 'guard-rails e aceiro.',
       lede: 'A Yieldwalker implementa pilotos pagos de corte de grama na faixa de domínio de rodovias. Além disso, aluga e fornece assistência técnica para robôs quadrúpedes.',
-      cta1: 'Pedir Piloto Pago',
+      cta1: 'Conversar Sobre Pilotos',
       cta2: 'Falar sobre locação ou assistência',
       stats: [
         { num: '37 kg', lbl: 'Peso com baterias' },
@@ -108,7 +108,7 @@ export const translations = {
         { title: 'Pequenas Áreas', p: 'Pequenos fragmentos de vegetação onde não é possível operar com braços articulados ou implementos de trator. Robôs tradicionais também enfrentam limitações de acabamento. O custo de mobilizar equipamentos muitas vezes não se justifica pela baixa densidade da vegetação.' },
         { title: 'Guard-Rails Metálicos', p: 'Áreas onde a vegetação cresce embaixo e ao redor de guard-rails metálicos. A própria estrutura impede o acesso de implementos de trator e robôs tradicionais. Nessas regiões, a intervenção é feita exclusivamente de forma manual.' },
       ],
-      cta: 'Pedir Piloto Pago',
+      cta: 'Conversar Sobre Pilotos',
     },
     assist: {
       eyebrow: '2 - A dor do roçador',
@@ -139,7 +139,7 @@ export const translations = {
       ],
       ctaTitle: 'Tire o seu time do risco',
       ctaP: 'Se hoje sua operação depende de corte manual em trechos críticos, dá pra estruturar um piloto pago e migrar esse risco pro robô, mantendo o time no comando, à distância.',
-      cta: 'Pedir Piloto Pago',
+      cta: 'Conversar Sobre Pilotos',
     },
     conc: {
       eyebrow: '3 - A dor da concessionária',
@@ -189,7 +189,7 @@ export const translations = {
           tags: ['Máxima escala', 'custo por m² mínimo'],
         },
       ],
-      cta: 'Pedir Piloto Pago',
+      cta: 'Conversar Sobre Pilotos',
     },
     cta: {
       eyebrow: 'Pronto pra colocar o quadrúpede pra trabalhar?',
@@ -197,12 +197,12 @@ export const translations = {
       h2b: 'um trabalhador está em perigo ',
       h2c: 'roçando',
       h2d: ' à beira da pista.',
-      btn: 'Pedir Piloto Pago',
+      btn: 'Conversar Sobre Pilotos',
     },
     foot: {
       tagline: 'Robótica quadrúpede com braço robótico e atuador para a indústria de infraestrutura.',
       servicesTitle: 'Serviços',
-      services: ['Pedir piloto pago', 'Locação de quadrúpede', 'Assistência técnica'],
+      services: ['Conversar sobre pilotos', 'Locação de quadrúpede', 'Assistência técnica'],
     },
   },
 
@@ -223,7 +223,7 @@ export const translations = {
       h1_2: 'roadside mowing struggles most:',
       h1_3: 'guardrails and firebreaks.',
       lede: 'Yieldwalker deploys paid pilots for autonomous grass-cutting in the highway right-of-way. We also rent out and provide technical service for quadruped robots.',
-      cta1: 'Request a Paid Pilot',
+      cta1: 'Talk About Pilots',
       cta2: 'Talk about rental or service',
       stats: [
         { num: '37 kg', lbl: 'Weight with batteries' },
@@ -282,7 +282,7 @@ export const translations = {
         { title: 'Small Areas', p: "Small fragments of vegetation where articulated arms or tractor implements can't operate. Traditional robots also struggle with finish quality here. Mobilizing equipment often isn't worth it given the low vegetation density." },
         { title: 'Metal Guardrails', p: 'Areas where vegetation grows under and around metal guardrails. The structure itself blocks access for tractor implements and traditional robots. In these spots, intervention is done exclusively by hand.' },
       ],
-      cta: 'Request a Paid Pilot',
+      cta: 'Talk About Pilots',
     },
     assist: {
       eyebrow: "2 - The mower operator's toll",
@@ -313,7 +313,7 @@ export const translations = {
       ],
       ctaTitle: "Take your crew out of harm's way",
       ctaP: 'If your operation still depends on manual cutting in critical stretches, we can structure a paid pilot and shift that risk to the robot, your team stays in command, remotely.',
-      cta: 'Request a Paid Pilot',
+      cta: 'Talk About Pilots',
     },
     conc: {
       eyebrow: "3 - The Concessionaire's Dilemma",
@@ -363,7 +363,7 @@ export const translations = {
           tags: ['Maximum scale', 'lowest cost per m²'],
         },
       ],
-      cta: 'Request a Paid Pilot',
+      cta: 'Talk About Pilots',
     },
     cta: {
       eyebrow: 'Ready to put the quadruped to work?',
@@ -371,12 +371,12 @@ export const translations = {
       h2b: 'a worker is in danger ',
       h2c: 'mowing',
       h2d: ' roadside.',
-      btn: 'Request a Paid Pilot',
+      btn: 'Talk About Pilots',
     },
     foot: {
       tagline: 'Quadruped robotics with a robotic arm and actuator for the infrastructure industry.',
       servicesTitle: 'Services',
-      services: ['Request a paid pilot', 'Quadruped rental', 'Technical service'],
+      services: ['Talk about pilots', 'Quadruped rental', 'Technical service'],
     },
   },
 
@@ -397,7 +397,7 @@ export const translations = {
       h1_2: 'el corte de césped más sufre:',
       h1_3: 'guardarraíles y cortafuegos.',
       lede: 'Yieldwalker implementa pilotos pagos de corte de césped en la franja de dominio de carreteras. Además, alquila y brinda asistencia técnica para robots cuadrúpedos.',
-      cta1: 'Solicitar Piloto Pago',
+      cta1: 'Conversar Sobre Pilotos',
       cta2: 'Hablar sobre alquiler o asistencia',
       stats: [
         { num: '37 kg', lbl: 'Peso con baterías' },
@@ -456,7 +456,7 @@ export const translations = {
         { title: 'Áreas Pequeñas', p: 'Pequeños fragmentos de vegetación donde no es posible operar con brazos articulados o implementos de tractor. Los robots tradicionales también enfrentan limitaciones de acabado. El costo de movilizar equipos muchas veces no se justifica por la baja densidad de la vegetación.' },
         { title: 'Guardarraíles Metálicos', p: 'Áreas donde la vegetación crece debajo y alrededor de guardarraíles metálicos. La propia estructura impide el acceso de implementos de tractor y robots tradicionales. En estas zonas, la intervención se realiza exclusivamente de forma manual.' },
       ],
-      cta: 'Solicitar Piloto Pago',
+      cta: 'Conversar Sobre Pilotos',
     },
     assist: {
       eyebrow: '2 - El dolor del que corta el pasto',
@@ -487,7 +487,7 @@ export const translations = {
       ],
       ctaTitle: 'Saque a su equipo del riesgo',
       ctaP: 'Si hoy su operación depende del corte manual en tramos críticos, podemos estructurar un piloto pago y trasladar ese riesgo al robot, su equipo sigue al mando, a distancia.',
-      cta: 'Solicitar Piloto Pago',
+      cta: 'Conversar Sobre Pilotos',
     },
     conc: {
       eyebrow: '3 - El Dilema de la Concesionaria',
@@ -537,7 +537,7 @@ export const translations = {
           tags: ['Máxima escala', 'costo por m² mínimo'],
         },
       ],
-      cta: 'Solicitar Piloto Pago',
+      cta: 'Conversar Sobre Pilotos',
     },
     cta: {
       eyebrow: '¿Listo para poner el cuadrúpedo a trabajar?',
@@ -545,12 +545,12 @@ export const translations = {
       h2b: 'un trabajador está en peligro ',
       h2c: 'cortando',
       h2d: ' al borde de la vía.',
-      btn: 'Solicitar Piloto Pago',
+      btn: 'Conversar Sobre Pilotos',
     },
     foot: {
       tagline: 'Robótica cuadrúpeda con brazo robótico y actuador para la industria de infraestructura.',
       servicesTitle: 'Servicios',
-      services: ['Solicitar piloto pago', 'Alquiler de cuadrúpedo', 'Asistencia técnica'],
+      services: ['Conversar sobre pilotos', 'Alquiler de cuadrúpedo', 'Asistencia técnica'],
     },
   },
 }
