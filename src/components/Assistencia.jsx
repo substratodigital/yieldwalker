@@ -36,7 +36,7 @@ export default function Assistencia() {
 
         <div className="service-grid" data-rv>
           <div className="service-media">
-            <img src="/img/assistencia-manual.webp" alt="Roçadores fazendo manutenção manual de vegetação na faixa de domínio de rodovia" loading="lazy" />
+            <img src="/img/assistencia-manual.webp" alt="Roçadores fazendo manutenção manual de vegetação na faixa de domínio de rodovia" loading="lazy" style={{ objectPosition: '26% 66%' }} />
             <span className="mono tag">YW SAFETY / WORKER RISK</span>
           </div>
           <div className="service-body">
