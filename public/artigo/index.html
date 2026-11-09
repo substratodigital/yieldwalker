@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yieldwalker · Da fábrica à faixa de domínio</title>
+<meta name="description" content="Physical AI na infraestrutura linear, começando pelas rodovias. Artigo de Miguel Chaves (Yieldwalker) e Daniel Daneluz (Soluciona / Via Appia)." />
+<meta property="og:title" content="Da fábrica à faixa de domínio" />
+<meta property="og:description" content="Physical AI na infraestrutura linear, começando pelas rodovias." />
+<meta property="og:type" content="article" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #161616; --ink-2: #1c1d1f; --bone: #d8d8d5; --gray: #777767; --gray-2: #8b949c;
+    --yellow: #f5b400; --yellow-25: rgba(245, 180, 0, 0.25);
+    --line: rgba(216, 216, 213, 0.14); --line-strong: rgba(216, 216, 213, 0.28);
+    --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--ink); color: var(--bone); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  header { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 clamp(16px, 3vw, 40px); border-bottom: 1px solid var(--line); }
+  header .brand img { height: 22px; width: auto; display: block; }
+  .lang-switch { display: flex; gap: 6px; }
+  .lang-btn { width: 28px; height: 20px; border-radius: 2px; overflow: hidden; border: 1px solid var(--line-strong); background: var(--ink-2); cursor: pointer; padding: 0; opacity: 0.45; transition: opacity .2s, border-color .2s; }
+  .lang-btn:hover { opacity: 0.85; }
+  .lang-btn.active { opacity: 1; border-color: var(--yellow); }
+  .lang-btn svg { width: 100%; height: 100%; display: block; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: clamp(40px, 7vh, 80px) clamp(20px, 4vw, 48px); }
+  .eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.85rem; color: var(--yellow); display: inline-flex; align-items: center; gap: 12px; }
+  .eyebrow::before { content: ''; width: 26px; height: 2px; background: var(--yellow); }
+  h1 { font-family: var(--font-display); text-transform: uppercase; font-weight: 600; line-height: 1; font-size: clamp(2.2rem, 6vw, 4rem); margin: 18px 0 14px; }
+  .lede { color: var(--gray-2); max-width: 60ch; margin: 0 0 12px; }
+  .authors { font-family: var(--font-mono); font-size: 0.8rem; color: var(--gray); margin: 0 0 32px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 40px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.78rem; font-weight: 500; padding: 15px 26px; border-radius: 2px; border: 1px solid transparent; text-decoration: none; transition: transform .2s, background .2s, box-shadow .2s; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--yellow); color: var(--ink); }
+  .btn-primary:hover { background: #ffc733; box-shadow: 0 8px 32px var(--yellow-25); }
+  .btn-ghost { border-color: var(--line-strong); color: var(--bone); }
+  .btn-ghost:hover { border-color: var(--yellow); color: var(--yellow); }
+  .viewer { display: none; width: 100%; height: 85vh; min-height: 560px; border: 1px solid var(--line-strong); border-radius: 2px; background: var(--ink-2); }
+  @media (min-width: 900px) { .viewer { display: block; } }
+  footer { border-top: 1px solid var(--line); padding: 28px clamp(20px, 4vw, 48px); font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.08em; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--yellow); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="brand" href="/" aria-label="Yieldwalker"><img src="/img/logo.png" alt="Yieldwalker" /></a>
+  <div class="lang-switch" role="group" aria-label="Language / Idioma">
+    <button class="lang-btn" data-lang="en" aria-label="English" title="English">
+      <svg viewBox="0 0 30 22" aria-hidden="true"><rect width="30" height="22" fill="#b22234"/><g fill="#fff"><rect y="1.7" width="30" height="1.7"/><rect y="5.1" width="30" height="1.7"/><rect y="8.5" width="30" height="1.7"/><rect y="11.9" width="30" height="1.7"/><rect y="15.3" width="30" height="1.7"/><rect y="18.7" width="30" height="1.7"/></g><rect width="13" height="12" fill="#3c3b6e"/></svg>
+    </button>
+    <button class="lang-btn" data-lang="pt" aria-label="Português" title="Português">
+      <svg viewBox="0 0 30 22" aria-hidden="true"><rect width="30" height="22" fill="#0b3a1e"/><polygon points="15,3 27,11 15,19 3,11" fill="#f5b400"/><circle cx="15" cy="11" r="4.6" fill="#1a3a6e"/></svg>
+    </button>
+    <button class="lang-btn" data-lang="es" aria-label="Español" title="Español">
+      <svg viewBox="0 0 30 22" aria-hidden="true"><rect width="30" height="22" fill="#aa151b"/><rect y="5.5" width="30" height="11" fill="#f1bf00"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap">
+  <span class="eyebrow" data-t="eyebrow"></span>
+  <h1>Da fábrica à faixa de domínio</h1>
+  <p class="lede" data-t="lede"></p>
+  <p class="authors">Miguel Chaves (Yieldwalker) · Daniel Daneluz (Soluciona / Via Appia)</p>
+
+  <div class="actions">
+    <a class="btn btn-primary" href="/artigo/da-fabrica-a-faixa-de-dominio.pdf" target="_blank" rel="noopener" data-t="open"></a>
+    <a class="btn btn-ghost" href="/artigo/da-fabrica-a-faixa-de-dominio.pdf" download data-t="download"></a>
+    <a class="btn btn-ghost" href="/contato/index.html" data-t="contact"></a>
+  </div>
+
+  <object class="viewer" data="/artigo/da-fabrica-a-faixa-de-dominio.pdf#view=FitH" type="application/pdf" aria-label="Da fábrica à faixa de domínio"></object>
+</main>
+
+<footer>
+  <span>© 2026 Yieldwalker Tecnologia Robótica Ltda.</span>
+  <a href="/">yieldwalker.com</a>
+</footer>
+
+<script>
+(function () {
+  var STRINGS = {
+    pt: { htmlLang: 'pt-BR', eyebrow: 'Curadoria · Outubro 2026', lede: 'Physical AI na infraestrutura linear, começando pelas rodovias: o que o playbook global da Accenture ensina (e o que não ensina) sobre o caminho rumo à roçada autônoma.', open: 'Abrir artigo (PDF)', download: 'Baixar PDF', contact: 'Falar com a Yieldwalker' },
+    en: { htmlLang: 'en', eyebrow: 'Curated · October 2026', lede: 'Physical AI in linear infrastructure, starting with highways: what the global Accenture playbook teaches (and what it does not) about the path to autonomous mowing. The article is in Portuguese.', open: 'Open article (PDF)', download: 'Download PDF', contact: 'Talk to Yieldwalker' },
+    es: { htmlLang: 'es', eyebrow: 'Curaduría · Octubre 2026', lede: 'Physical AI en infraestructura lineal, empezando por las carreteras: lo que el playbook global de Accenture enseña (y lo que no) sobre el camino hacia el corte autónomo. El artículo está en portugués.', open: 'Abrir artículo (PDF)', download: 'Descargar PDF', contact: 'Hablar con Yieldwalker' }
+  }
+  function readCookie(n) { var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : null }
+  function detect() {
+    var s = null
+    try { s = localStorage.getItem('yw-lang') } catch (e) {}
+    if (s && STRINGS[s]) return s
+    var g = readCookie('yw-lang')
+    return g && STRINGS[g] ? g : 'pt'
+  }
+  function apply(lang) {
+    var t = STRINGS[lang]
+    document.documentElement.lang = t.htmlLang
+    document.querySelectorAll('[data-t]').forEach(function (el) { el.textContent = t[el.getAttribute('data-t')] })
+    document.querySelectorAll('.lang-btn').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-lang') === lang) })
+  }
+  document.querySelectorAll('.lang-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var l = b.getAttribute('data-lang')
+      try { localStorage.setItem('yw-lang', l) } catch (e) {}
+      apply(l)
+    })
+  })
+  apply(detect())
+})()
+</script>
+</body>
+</html>
