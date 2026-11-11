@@ -18,14 +18,14 @@ export default async (req) => {
     return new Response(JSON.stringify({ error: 'invalid_json' }), { status: 400, headers: { 'Content-Type': 'application/json' } })
   }
 
-  const { nome, email, empresa, area, servico, info, website } = data || {}
+  const { nome, email, empresa, area, info, website } = data || {}
 
   // honeypot: campo invisível que só bots preenchem
   if (website) {
     return new Response(JSON.stringify({ ok: true }), { status: 200, headers: { 'Content-Type': 'application/json' } })
   }
 
-  if (!nome || !email || !empresa || !area || !servico) {
+  if (!nome || !email || !empresa || !area) {
     return new Response(JSON.stringify({ error: 'missing_fields' }), { status: 400, headers: { 'Content-Type': 'application/json' } })
   }
   if (!EMAIL_RE.test(email)) {
@@ -38,7 +38,6 @@ export default async (req) => {
     <p><strong>E-mail:</strong> ${escapeHtml(email)}</p>
     <p><strong>Empresa:</strong> ${escapeHtml(empresa)}</p>
     <p><strong>Área da empresa:</strong> ${escapeHtml(area)}</p>
-    <p><strong>Tipo de serviço:</strong> ${escapeHtml(servico)}</p>
     <p><strong>Informação adicional:</strong><br>${escapeHtml(info || '-').replace(/\n/g, '<br>')}</p>
   `.trim()
 

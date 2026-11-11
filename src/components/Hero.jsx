@@ -80,9 +80,6 @@ export default function Hero() {
                 <ContactIcon />
                 {t.hero.cta1}
               </a>
-              <a className="btn btn-ghost" href="/contato/index.html">
-                {t.hero.cta2}
-              </a>
             </div>
           </div>
           <div className="hero-scroll mono">

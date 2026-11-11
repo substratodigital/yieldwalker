@@ -179,15 +179,6 @@
         <input type="text" id="area" name="area" required />
       </div>
       <div class="field">
-        <label for="servico" data-t="lServico"></label>
-        <select id="servico" name="servico" required>
-          <option value="" data-t="oEscolha" selected disabled></option>
-          <option value="piloto" data-t="oPiloto"></option>
-          <option value="locacao" data-t="oLocacao"></option>
-          <option value="assistencia" data-t="oAssistencia"></option>
-        </select>
-      </div>
-      <div class="field">
         <label for="info" data-t="lInfo"></label>
         <textarea id="info" name="info" rows="5"></textarea>
       </div>
@@ -214,8 +205,6 @@
       <div class="foot-col">
         <h5 data-t="footServicesTitle"></h5>
         <a href="/contato/index.html" data-t="footService1"></a>
-        <a href="/#locacao" data-t="footService2"></a>
-        <a href="/#assistencia" data-t="footService3"></a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -232,53 +221,48 @@
       htmlLang: 'pt-BR', title: 'Yieldwalker · Contato',
       eyebrow: 'Fale com a gente',
       h1: 'Vamos colocar o quadrúpede pra trabalhar.',
-      lede: 'Preencha os campos abaixo e retornamos com os próximos passos para locação, assistência técnica ou um piloto pago.',
+      lede: 'Preencha os campos abaixo e retornamos com os próximos passos para conversarmos sobre pilotos.',
       lNome: 'Nome', lEmail: 'E-mail', lEmpresa: 'Empresa', lArea: 'Área da empresa',
-      lServico: 'Tipo de serviço', lInfo: 'Informação adicional (opcional)',
-      oEscolha: 'Selecione uma opção', oPiloto: 'Piloto pago', oLocacao: 'Locação', oAssistencia: 'Assistência',
+      lInfo: 'Informação adicional (opcional)',
       submit: 'Enviar', sending: 'Enviando...',
       success: 'Agradecemos o envio da mensagem. Vamos responder o mais rápido possível.',
       error: 'Não conseguimos enviar agora. Tente novamente ou escreva para hello@yieldwalker.com.',
       footTagline: 'Robótica quadrúpede com braço robótico e atuador para a indústria de infraestrutura.',
       footServicesTitle: 'Serviços',
-      footService1: 'Conversar sobre pilotos', footService2: 'Locação de quadrúpede', footService3: 'Assistência técnica',
+      footService1: 'Conversar sobre pilotos',
       footTag: 'Uma empresa asiática com operação nos países latinos',
     },
     en: {
       htmlLang: 'en', title: 'Yieldwalker · Contact',
       eyebrow: 'Talk to us',
       h1: "Let's put the quadruped to work.",
-      lede: "Fill in the fields below and we'll get back to you with next steps for rental, technical service or a paid pilot.",
+      lede: "Fill in the fields below and we'll get back to you with next steps to talk about pilots.",
       lNome: 'Name', lEmail: 'Email', lEmpresa: 'Company', lArea: 'Company industry',
-      lServico: 'Service type', lInfo: 'Additional information (optional)',
-      oEscolha: 'Select an option', oPiloto: 'Paid pilot', oLocacao: 'Rental', oAssistencia: 'Service',
+      lInfo: 'Additional information (optional)',
       submit: 'Send', sending: 'Sending...',
       success: "Thank you for reaching out. We'll get back to you as soon as possible.",
       error: "Couldn't send right now. Try again or email hello@yieldwalker.com.",
       footTagline: 'Quadruped robotics with a robotic arm and actuator for the infrastructure industry.',
       footServicesTitle: 'Services',
-      footService1: 'Talk about pilots', footService2: 'Quadruped rental', footService3: 'Technical service',
+      footService1: 'Talk about pilots',
       footTag: 'An Asian company operating across Latin countries',
     },
     es: {
       htmlLang: 'es', title: 'Yieldwalker · Contacto',
       eyebrow: 'Hable con nosotros',
       h1: 'Vamos a poner el cuadrúpedo a trabajar.',
-      lede: 'Complete los campos abajo y le responderemos con los próximos pasos para alquiler, asistencia técnica o un piloto pago.',
+      lede: 'Complete los campos abajo y le responderemos con los próximos pasos para conversar sobre pilotos.',
       lNome: 'Nombre', lEmail: 'Correo electrónico', lEmpresa: 'Empresa', lArea: 'Área de la empresa',
-      lServico: 'Tipo de servicio', lInfo: 'Información adicional (opcional)',
-      oEscolha: 'Seleccione una opción', oPiloto: 'Piloto pago', oLocacao: 'Alquiler', oAssistencia: 'Asistencia',
+      lInfo: 'Información adicional (opcional)',
       submit: 'Enviar', sending: 'Enviando...',
       success: 'Gracias por su mensaje. Le responderemos lo más rápido posible.',
       error: 'No pudimos enviar ahora. Intente de nuevo o escriba a hello@yieldwalker.com.',
       footTagline: 'Robótica cuadrúpeda con brazo robótico y actuador para la industria de infraestructura.',
       footServicesTitle: 'Servicios',
-      footService1: 'Conversar sobre pilotos', footService2: 'Alquiler de cuadrúpedo', footService3: 'Asistencia técnica',
+      footService1: 'Conversar sobre pilotos',
       footTag: 'Una empresa asiática con operación en los países latinos',
     },
   }
-
-  var SERVICE_LABEL_KEY = { piloto: 'oPiloto', locacao: 'oLocacao', assistencia: 'oAssistencia' }
 
   function readCookie(name) {
     var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'))
@@ -333,7 +317,6 @@
       email: form.email.value.trim(),
       empresa: form.empresa.value.trim(),
       area: form.area.value.trim(),
-      servico: t[SERVICE_LABEL_KEY[form.servico.value]] || form.servico.value,
       info: form.info.value.trim() || '-',
       website: form.website.value,
     }

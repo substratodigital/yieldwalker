@@ -2,8 +2,6 @@ import { useLang } from '../i18n.jsx'
 
 export default function Footer() {
   const { t } = useLang()
-  const links = ['/contato/index.html', '/contato/index.html', '/contato/index.html']
-
   return (
     <footer>
       <div className="wrap">
@@ -14,8 +12,8 @@ export default function Footer() {
           </div>
           <div className="foot-col">
             <h5>{t.foot.servicesTitle}</h5>
-            {t.foot.services.map((s, i) => (
-              <a key={s} href={links[i]}>{s}</a>
+            {t.foot.services.map((s) => (
+              <a key={s} href="/contato/index.html">{s}</a>
             ))}
           </div>
         </div>

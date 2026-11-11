@@ -1,36 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-export const WA_NUMBER = '5511982023271' // TODO: substituir pelo número real antes de publicar
-
-const waTexts = {
-  pt: {
-    generic: 'Olá, vim pelo site da Yieldwalker.',
-    locacao: 'Olá, quero saber mais sobre a locação do QPD 2DoF BCN 1.',
-    locacao2: 'Olá, quero consultar disponibilidade e condições de locação do QPD 2DoF BCN 1.',
-    assistencia: 'Olá, preciso de assistência técnica para um QPD 2DoF BCN 1.',
-    pilotos: 'Olá, temos interesse em estruturar um piloto de corte de vegetação autônomo.',
-  },
-  en: {
-    generic: 'Hi, I came from the Yieldwalker website.',
-    locacao: "Hi, I'd like to know more about renting the QPD 2DoF BCN 1.",
-    locacao2: "Hi, I'd like to check availability and rental terms for the QPD 2DoF BCN 1.",
-    assistencia: 'Hi, I need technical service for an QPD 2DoF BCN 1.',
-    pilotos: "Hi, we're interested in setting up an autonomous grass-cutting pilot.",
-  },
-  es: {
-    generic: 'Hola, vengo del sitio web de Yieldwalker.',
-    locacao: 'Hola, quiero saber más sobre el alquiler del QPD 2DoF BCN 1.',
-    locacao2: 'Hola, quiero consultar disponibilidad y condiciones de alquiler del QPD 2DoF BCN 1.',
-    assistencia: 'Hola, necesito asistencia técnica para un QPD 2DoF BCN 1.',
-    pilotos: 'Hola, tenemos interés en estructurar un piloto de corte de vegetación autónomo.',
-  },
-}
-
-export function waLink(lang, key) {
-  const text = (waTexts[lang] && waTexts[lang][key]) || waTexts.pt[key] || waTexts.pt.generic
-  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`
-}
-
 export const translations = {
   pt: {
     htmlLang: 'pt-BR',
@@ -47,10 +16,9 @@ export const translations = {
       h1_1b: 'pernas',
       h1_1c: ' para onde',
       h1_2: 'a roçagem mais sofre:',
-      h1_3: 'guard-rails e aceiro.',
-      lede: 'A Yieldwalker implementa pilotos pagos de corte de grama na faixa de domínio de rodovias. Além disso, aluga e fornece assistência técnica para robôs quadrúpedes.',
+      h1_3: 'obstáculos.',
+      lede: 'A Yieldwalker implementa pilotos pagos de corte de grama na faixa de domínio de rodovias.',
       cta1: 'Conversar Sobre Pilotos',
-      cta2: 'Falar sobre locação ou assistência',
       stats: [
         { num: '37 kg', lbl: 'Peso com baterias' },
         { num: '30°', lbl: 'Inclinação superada' },
@@ -101,12 +69,12 @@ export const translations = {
       eyebrow: '1 - Onde a Roçagem mais sofre',
       h2a: 'Quatro frentes onde ',
       h2b: 'a roçagem convencional trava.',
-      lede: 'Bordas de drenagem, dispositivos viários, áreas pequenas e bordas de faixa de domínio com obstáculos como guard-rails e aceiro concentram o maior custo e risco da manutenção manual, exatamente aí que o QPD 2DoF BCN 1 rende mais.',
+      lede: 'Bordas de drenagem, dispositivos viários, áreas pequenas e bordas de faixa de domínio com obstáculos concentram o maior custo e risco da manutenção manual, exatamente aí que o QPD 2DoF BCN 1 rende mais.',
       challenges: [
         { title: 'Bordas de Drenagem', p: 'Áreas onde a vegetação cresce próxima a estruturas de drenagem. Tratores podem operar nessas regiões, mas frequentemente causam danos pela pressão do equipamento ou contato das ferramentas de corte. O acabamento final é normalmente feito de forma manual.' },
         { title: 'Dispositivos Viários', p: 'Canteiros centrais, rotatórias e entornos de placas de sinalização, onde o layout do local e obstáculos fixos impedem o acesso de braços articulados e implementos de trator. Máquinas tradicionais também enfrentam limitações de manobra nesses espaços.' },
         { title: 'Pequenas Áreas', p: 'Pequenos fragmentos de vegetação onde não é possível operar com braços articulados ou implementos de trator. Robôs tradicionais também enfrentam limitações de acabamento. O custo de mobilizar equipamentos muitas vezes não se justifica pela baixa densidade da vegetação.' },
-        { title: 'Guard-Rails Metálicos', p: 'Áreas onde a vegetação cresce embaixo e ao redor de guard-rails metálicos. A própria estrutura impede o acesso de implementos de trator e robôs tradicionais. Nessas regiões, a intervenção é feita exclusivamente de forma manual.' },
+        { title: 'Obstáculos', p: 'Áreas onde a vegetação cresce embaixo e ao redor de obstáculos fixos. A própria estrutura impede o acesso de implementos de trator e robôs tradicionais. Nessas regiões, a intervenção é feita exclusivamente de forma manual.' },
       ],
       cta: 'Conversar Sobre Pilotos',
     },
@@ -202,7 +170,7 @@ export const translations = {
     foot: {
       tagline: 'Robótica quadrúpede com braço robótico e atuador para a indústria de infraestrutura.',
       servicesTitle: 'Serviços',
-      services: ['Conversar sobre pilotos', 'Locação de quadrúpede', 'Assistência técnica'],
+      services: ['Conversar sobre pilotos'],
     },
   },
 
@@ -221,10 +189,9 @@ export const translations = {
       h1_1b: 'legs',
       h1_1c: ' for where',
       h1_2: 'roadside mowing struggles most:',
-      h1_3: 'guardrails and firebreaks.',
-      lede: 'Yieldwalker deploys paid pilots for autonomous grass-cutting in the highway right-of-way. We also rent out and provide technical service for quadruped robots.',
+      h1_3: 'obstacles.',
+      lede: 'Yieldwalker deploys paid pilots for autonomous grass-cutting in the highway right-of-way.',
       cta1: 'Talk About Pilots',
-      cta2: 'Talk about rental or service',
       stats: [
         { num: '37 kg', lbl: 'Weight with batteries' },
         { num: '30°', lbl: 'Incline handled' },
@@ -275,12 +242,12 @@ export const translations = {
       eyebrow: '1 - Where Mowing Suffers Most',
       h2a: 'Four fronts where ',
       h2b: 'conventional mowing gets stuck.',
-      lede: "Drainage edges, road furniture, small areas and right-of-way edges with obstacles like guardrails and firebreaks carry the highest cost and risk in manual upkeep, exactly where the QPD 2DoF BCN 1 performs best.",
+      lede: "Drainage edges, road furniture, small areas and right-of-way edges with obstacles carry the highest cost and risk in manual upkeep, exactly where the QPD 2DoF BCN 1 performs best.",
       challenges: [
         { title: 'Drainage Edges', p: "Areas where vegetation grows close to drainage structures. Tractors can operate here, but often cause damage from equipment pressure or contact with cutting tools. Final finishing is usually done by hand." },
         { title: 'Road Furniture', p: "Traffic islands, roundabouts and areas around signage posts, where the site layout and fixed obstacles block access for articulated arms and tractor implements. Traditional machines also struggle to maneuver in these spaces." },
         { title: 'Small Areas', p: "Small fragments of vegetation where articulated arms or tractor implements can't operate. Traditional robots also struggle with finish quality here. Mobilizing equipment often isn't worth it given the low vegetation density." },
-        { title: 'Metal Guardrails', p: 'Areas where vegetation grows under and around metal guardrails. The structure itself blocks access for tractor implements and traditional robots. In these spots, intervention is done exclusively by hand.' },
+        { title: 'Obstacles', p: 'Areas where vegetation grows under and around fixed obstacles. The structure itself blocks access for tractor implements and traditional robots. In these spots, intervention is done exclusively by hand.' },
       ],
       cta: 'Talk About Pilots',
     },
@@ -376,7 +343,7 @@ export const translations = {
     foot: {
       tagline: 'Quadruped robotics with a robotic arm and actuator for the infrastructure industry.',
       servicesTitle: 'Services',
-      services: ['Talk about pilots', 'Quadruped rental', 'Technical service'],
+      services: ['Talk about pilots'],
     },
   },
 
@@ -395,10 +362,9 @@ export const translations = {
       h1_1b: 'patas',
       h1_1c: ' para donde',
       h1_2: 'el corte de césped más sufre:',
-      h1_3: 'guardarraíles y cortafuegos.',
-      lede: 'Yieldwalker implementa pilotos pagos de corte de césped en la franja de dominio de carreteras. Además, alquila y brinda asistencia técnica para robots cuadrúpedos.',
+      h1_3: 'obstáculos.',
+      lede: 'Yieldwalker implementa pilotos pagos de corte de césped en la franja de dominio de carreteras.',
       cta1: 'Conversar Sobre Pilotos',
-      cta2: 'Hablar sobre alquiler o asistencia',
       stats: [
         { num: '37 kg', lbl: 'Peso con baterías' },
         { num: '30°', lbl: 'Inclinación superada' },
@@ -449,12 +415,12 @@ export const translations = {
       eyebrow: '1 - Donde el Corte Más Sufre',
       h2a: 'Cuatro frentes donde ',
       h2b: 'el corte convencional se traba.',
-      lede: 'Bordes de drenaje, dispositivos viales, áreas pequeñas y bordes de la franja de dominio con obstáculos como guardarraíles y cortafuegos concentran el mayor costo y riesgo del mantenimiento manual, justo donde el QPD 2DoF BCN 1 rinde más.',
+      lede: 'Bordes de drenaje, dispositivos viales, áreas pequeñas y bordes de la franja de dominio con obstáculos concentran el mayor costo y riesgo del mantenimiento manual, justo donde el QPD 2DoF BCN 1 rinde más.',
       challenges: [
         { title: 'Bordes de Drenaje', p: 'Áreas donde la vegetación crece cerca de estructuras de drenaje. Los tractores pueden operar en estas zonas, pero suelen causar daños por la presión del equipo o el contacto de las herramientas de corte. El acabado final normalmente se hace de forma manual.' },
         { title: 'Dispositivos Viales', p: 'Islas de tráfico, rotondas y entornos de señalización, donde el diseño del lugar y los obstáculos fijos impiden el acceso de brazos articulados e implementos de tractor. Las máquinas tradicionales también enfrentan limitaciones de maniobra en estos espacios.' },
         { title: 'Áreas Pequeñas', p: 'Pequeños fragmentos de vegetación donde no es posible operar con brazos articulados o implementos de tractor. Los robots tradicionales también enfrentan limitaciones de acabado. El costo de movilizar equipos muchas veces no se justifica por la baja densidad de la vegetación.' },
-        { title: 'Guardarraíles Metálicos', p: 'Áreas donde la vegetación crece debajo y alrededor de guardarraíles metálicos. La propia estructura impide el acceso de implementos de tractor y robots tradicionales. En estas zonas, la intervención se realiza exclusivamente de forma manual.' },
+        { title: 'Obstáculos', p: 'Áreas donde la vegetación crece debajo y alrededor de obstáculos fijos. La propia estructura impide el acceso de implementos de tractor y robots tradicionales. En estas zonas, la intervención se realiza exclusivamente de forma manual.' },
       ],
       cta: 'Conversar Sobre Pilotos',
     },
@@ -550,7 +516,7 @@ export const translations = {
     foot: {
       tagline: 'Robótica cuadrúpeda con brazo robótico y actuador para la industria de infraestructura.',
       servicesTitle: 'Servicios',
-      services: ['Conversar sobre pilotos', 'Alquiler de cuadrúpedo', 'Asistencia técnica'],
+      services: ['Conversar sobre pilotos'],
     },
   },
 }
