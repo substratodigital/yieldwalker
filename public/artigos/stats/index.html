@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Yieldwalker · Estatísticas do artigo</title>
+<link rel="icon" type="image/png" href="/favicon.png" />
+<style>
+  body { margin: 0; background: #161616; color: #d8d8d5; font: 16px/1.6 system-ui, sans-serif; padding: 40px 20px; }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  p { color: #8b949c; margin: 0 0 24px; font-size: 0.9rem; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 10px 12px; border-bottom: 1px solid rgba(216,216,213,.14); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: #8b949c; font-weight: 500; font-size: 0.8rem; text-transform: uppercase; letter-spacing: .08em; }
+  tr.today td { color: #f5b400; font-weight: 600; }
+  .wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Artigo "Da fábrica à faixa de domínio"</h1>
+  <p id="msg">Carregando...</p>
+  <div class="wrap"><table id="t" hidden>
+    <thead><tr><th>Dia</th><th>Visitas</th><th>Pessoas</th><th>Abriu PDF</th><th>Baixou PDF</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+</main>
+<script>
+(function () {
+  var key = new URLSearchParams(location.hash.slice(1)).get('key')
+  var msg = document.getElementById('msg')
+  if (!key) { msg.textContent = 'Abra este link com #key=SUA_CHAVE no final.'; return }
+  fetch('/.netlify/functions/stats?key=' + encodeURIComponent(key))
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json() })
+    .then(function (d) {
+      var tb = document.querySelector('#t tbody')
+      d.rows.forEach(function (r, i) {
+        var tr = document.createElement('tr')
+        if (i === 0) tr.className = 'today'
+        var label = r.day.split('-').reverse().join('/') + (i === 0 ? ' (hoje)' : '')
+        ;[label, r.view, r.visitors, r.open, r.download].forEach(function (v) {
+          var td = document.createElement('td'); td.textContent = v; tr.appendChild(td)
+        })
+        tb.appendChild(tr)
+      })
+      document.getElementById('t').hidden = false
+      msg.textContent = 'Últimos 7 dias, horário de Brasília. Pessoas = primeira visita do dia em cada navegador.'
+    })
+    .catch(function () { msg.textContent = 'Não foi possível carregar. Chave incorreta ou a variável STATS_KEY ainda não foi configurada na Netlify.' })
+})()
+</script>
+</body>
+</html>

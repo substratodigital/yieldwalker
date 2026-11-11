@@ -76,8 +76,8 @@
   <p class="authors">Miguel Chaves (Yieldwalker) · Daniel Daneluz (Soluciona / Via Appia)</p>
 
   <div class="actions">
-    <a class="btn btn-primary" href="/artigos/da-fabrica-a-faixa-de-dominio.pdf" target="_blank" rel="noopener" data-t="open"></a>
-    <a class="btn btn-ghost" href="/artigos/da-fabrica-a-faixa-de-dominio.pdf" download data-t="download"></a>
+    <a class="btn btn-primary" href="/artigos/da-fabrica-a-faixa-de-dominio.pdf" target="_blank" rel="noopener" data-track="open" data-t="open"></a>
+    <a class="btn btn-ghost" href="/artigos/da-fabrica-a-faixa-de-dominio.pdf" download data-track="download" data-t="download"></a>
     <a class="btn btn-ghost" href="/contato/index.html" data-t="contact"></a>
   </div>
 
@@ -116,6 +116,20 @@
       try { localStorage.setItem('yw-lang', l) } catch (e) {}
       apply(l)
     })
+  })
+  function track(e, u) {
+    try {
+      var body = JSON.stringify({ e: e, u: u === true })
+      if (!(navigator.sendBeacon && navigator.sendBeacon('/.netlify/functions/track', new Blob([body], { type: 'application/json' })))) {
+        fetch('/.netlify/functions/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true })
+      }
+    } catch (err) {}
+  }
+  var today = new Date().toDateString(), first = true
+  try { first = localStorage.getItem('yw-art-seen') !== today; localStorage.setItem('yw-art-seen', today) } catch (err) {}
+  track('view', first)
+  document.querySelectorAll('[data-track]').forEach(function (a) {
+    a.addEventListener('click', function () { track(a.getAttribute('data-track')) })
   })
   apply(detect())
 })()
